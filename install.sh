@@ -10,9 +10,7 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# Install Pure theme
-# Did not work on m1 globally anymore
-#npm install --global pure-prompt
+echo "Install Pure theme..."
 git clone https://github.com/sindresorhus/pure.git "$HOME/.dotfiles/plugins/pure"
 
 echo "Linking gitconfig..."

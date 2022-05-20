@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Installing oh my zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# echo "Installing oh my zsh..."
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Configuring zsh..."
 mv $HOME/.zshrc $HOME/.zshrc_backup

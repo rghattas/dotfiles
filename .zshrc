@@ -8,7 +8,6 @@ plugins+=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 autoload -U promptinit; promptinit
-autoload -U compinit && compinit
 prompt pure
 
 # User configuration

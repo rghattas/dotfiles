@@ -1,10 +1,6 @@
 [user]
 	name = Renee Ghattas
 	email = renee.ghattas@shopify.com
-	signingkey = 4732BE9E9A46D028
 [commit]
 	gpgsign = true
-[gpg]
-	program = /opt/homebrew/bin/gpg
-[include]
-	path = /Users/rghat/.config/dev/gitconfig
+

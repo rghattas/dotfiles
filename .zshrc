@@ -6,6 +6,7 @@ ZSH_THEME=""
 plugins+=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+fpath+=$HOME/.dotfiles/plugins/pure
 
 autoload -U promptinit; promptinit
 prompt pure
@@ -26,21 +27,11 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 eval $(thefuck --alias)
-# You can use whatever you want as an alias, like for Mondays:
-eval $(thefuck --alias FUCK)
 
 alias amend="git commit --amend --no-edit"
 
 if [[ $(command -v spin) ]]; then
   source <(spin completion)
-fi
-
-if [[ $(command -v journalctl) ]]; then
-  alias jc=journalctl
-fi
-
-if [[ $(command -v systemctl) ]]; then
-  alias sc=systemctl
 fi
 
 # if $HOME/zsh_extras directory exists, source all files in $HOME/zsh_extras if any exist

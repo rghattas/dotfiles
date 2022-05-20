@@ -19,9 +19,21 @@ ln -s $PWD/.gitconfig $HOME/.gitconfig
 
 echo "Installing tools..."
 
+# load packages to install array from packages.yml into packages_to_install using mapfile
+packages_to_install=($(awk -F"- " '{printf $2 "\n"}' packages.yml))
+# For each package, install it if it's not installed
+for package in "${packages_to_install[@]}"; do
+  if ! command -v $package &> /dev/null; then
+    echo "Installing $package via apt-get..."
+    sudo apt-get install -y $package
+  else
+    echo "Package $package already installed"
+  fi
+done
+
 if ! command -v thefuck &> /dev/null; then
-  echo "Installing thefuck via pip3..."
-  sudo pip3 install thefuck
+  echo "Installing thefuck..."
+  sudo apt install thefuck
 fi
 
 echo "Installing spin specific tools..."

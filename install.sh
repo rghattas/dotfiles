@@ -41,5 +41,5 @@ if [ $SPIN ]; then
   echo "Ensure dirmngr daemon is started..."
   gpgconf --launch dirmngr
   echo "Configure gpg keys..."
-  gpg --keyserver keys.openpgp.org --recv 22509CFFD8AEA2F404589F301105B38A086E6447
+  gpg --keyserver keys.openpgp.org --recv 1214CBBB50EC44438149FE1A4732BE9E9A46D028
 fi

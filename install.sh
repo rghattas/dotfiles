@@ -33,7 +33,7 @@ done
 
 if ! command -v thefuck &> /dev/null; then
   echo "Installing thefuck..."
-  sudo apt install thefuck
+  sudo apt-get install -y thefuck
 fi
 
 echo "Installing spin specific tools..."

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 echo "Installing oh my zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -18,7 +20,6 @@ rm -rf $HOME/.gitconfig
 ln -s $PWD/.gitconfig $HOME/.gitconfig
 
 echo "Installing tools..."
-
 # load packages to install array from packages.yml into packages_to_install using mapfile
 packages_to_install=($(awk -F"- " '{printf $2 "\n"}' packages.yml))
 # For each package, install it if it's not installed
@@ -32,8 +33,8 @@ for package in "${packages_to_install[@]}"; do
 done
 
 if ! command -v thefuck &> /dev/null; then
-  echo "Installing thefuck..."
-  sudo apt-get install -y thefuck
+  echo "Installing thefuck via pip3..."
+  sudo pip3 install thefuck
 fi
 
 echo "Installing spin specific tools..."

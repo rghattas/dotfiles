@@ -26,13 +26,15 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-eval $(thefuck --alias)
-
-alias amend="git commit --amend --no-edit"
+if [[ $(command -v thefuck) ]]; then
+  eval $(thefuck --alias)
+fi
 
 if [[ $(command -v spin) ]]; then
   source <(spin completion)
 fi
+
+alias amend="git commit --amend --no-edit"
 
 # if $HOME/zsh_extras directory exists, source all files in $HOME/zsh_extras if any exist
 if [[ -d $HOME/zsh_extras ]]; then
@@ -50,3 +52,8 @@ fi
 if [[ $(command -v vim) ]]; then
   export EDITOR=vim
 fi
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+
+[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh

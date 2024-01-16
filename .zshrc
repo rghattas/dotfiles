@@ -35,6 +35,8 @@ if [[ $(command -v spin) ]]; then
 fi
 
 alias amend="git commit --amend --no-edit"
+alias web="yarn workspace @shop/web"
+alias shared="yarn workspace @shop/shared"
 
 # if $HOME/zsh_extras directory exists, source all files in $HOME/zsh_extras if any exist
 if [[ -d $HOME/zsh_extras ]]; then
